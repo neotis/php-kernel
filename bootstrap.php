@@ -4,7 +4,7 @@ namespace Neotis\Kernel;
 
 trait bootstrap
 {
-    private function requireBootstrapFiles(): void
+    protected function requireBootstrapFiles(): void
     {
         $main = $this->bootstrapDirectory . DIRECTORY_SEPARATOR . 'main.php';
 
@@ -15,10 +15,5 @@ trait bootstrap
         foreach ($this->bootstrapDirectory as $key => $value) {
             require_once $value;
         }
-    }
-
-    protected function requireBootstraps(): void
-    {
-        $this->requireBootstrapFiles();
     }
 }

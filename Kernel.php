@@ -22,7 +22,7 @@ class Kernel
 
     public static function getInstance(string $bootstrapDirectory = ''): Kernel
     {
-        if (empty(self::$instance)) {
+        if (!isset(self::$instance)) {
             self::$instance = new Kernel($bootstrapDirectory);
         }
         return self::$instance;
@@ -35,9 +35,11 @@ class Kernel
 
     public function fire(): void
     {
+        $this->requireBootstrapFiles();
+
         try {
             foreach ($this->positions as $object) {
-                (new $object)->start();
+                //(new $object)->start();
             }
         } catch (Exception $e){
             throw new Exception($e->getMessage());
