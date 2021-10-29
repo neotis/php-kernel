@@ -15,8 +15,8 @@ trait bootstrap
         $files = $this->fileSystem->files($this->bootstrapDirectory);
 
         foreach ($files as $file) {
-            echo $file->getBasename() . '<br>';
-            require_once $file;
+            if($file->getBasename() !== 'main.php')
+                require_once $file;
         }
     }
 }
