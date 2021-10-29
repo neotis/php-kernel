@@ -35,6 +35,6 @@ class Kernel
 
     public function fire(): void
     {
-        $this->requireBootstraps();
+        $this->requireBootstrapFiles();
     }
 }
