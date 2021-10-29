@@ -35,12 +35,6 @@ class Kernel
 
     public function fire(): void
     {
-        try {
-            foreach ($this->positions as $object) {
-                (new $object)->start();
-            }
-        } catch (Exception $e){
-            throw new Exception($e->getMessage());
-        }
+        $this->requireBootstraps();
     }
 }
