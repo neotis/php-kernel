@@ -18,7 +18,6 @@ class Kernel
     {
         $this->bootstrapDirectory = $bootstrapDirectory;
         $this->fileSystem = new File();
-        $this->requireBootstraps();
     }
 
     public static function getInstance(string $bootstrapDirectory = ''): Kernel
