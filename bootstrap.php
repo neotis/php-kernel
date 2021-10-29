@@ -15,7 +15,7 @@ trait bootstrap
         $files = $this->fileSystem->files($this->bootstrapDirectory);
 
         foreach ($files as $file) {
-            echo $file->getBasename . '<br>';
+            echo $file->getBasename() . '<br>';
             require_once $file;
         }
     }
