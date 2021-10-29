@@ -22,7 +22,7 @@ class Kernel
 
     public static function getInstance(string $bootstrapDirectory = ''): Kernel
     {
-        if (empty(self::$instance)) {
+        if (!isset(self::$instance)) {
             self::$instance = new Kernel($bootstrapDirectory);
         }
         return self::$instance;
