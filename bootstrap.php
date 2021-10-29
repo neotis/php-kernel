@@ -12,8 +12,11 @@ trait bootstrap
             throw new \Exception('Main file of bootstrap directory is not exist!');
         require_once $main;
 
-        foreach ($this->bootstrapDirectory as $key => $value) {
-            require_once $value;
+        $files = $this->fileSystem->files($this->bootstrapDirectory);
+
+        foreach ($files as $file) {
+            echo $file->getBasename . '<br>';
+            require_once $file;
         }
     }
 }
