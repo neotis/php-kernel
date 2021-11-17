@@ -5,7 +5,7 @@
     "keywords": [],
     "license": "MIT",
     "autoload": {
-        "psr-4": { "Neotis\\Kernel\\": "" },
+        "psr-4": { "Neotis\\Kernel\\": "src/" },
         "exclude-from-classmap": [
             "/tests/"
         ]
